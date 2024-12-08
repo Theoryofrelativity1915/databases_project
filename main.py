@@ -1,4 +1,4 @@
-from product import add_new_product
+from product import get_product_query_type
 from transaction import handle_transaction
 from user import *
 
@@ -12,7 +12,7 @@ def handle_verified_user(run):
         print("\nPlease enter a number to select from the following options:")
         print("1 - Start a new transaction.")
         print("2 - Change password")
-        print("3 - Add a new service for the business to offer to customers")
+        print("3 - About our services")
         print("4 - Update my account info")
         print("5 - Delete my account")
         print("6 - Exit? ")
@@ -23,7 +23,7 @@ def handle_verified_user(run):
             case "2":
                 forgot_password(user.email)
             case "3":
-                add_new_product()
+                get_product_query_type()
             case "4":
                 update_user_account(user)
             case "5":
