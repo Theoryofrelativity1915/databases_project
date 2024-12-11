@@ -1,5 +1,5 @@
 import datetime
-from appointment import create_appointment
+from appointment import add_product
 from make_query import make_query
 
 
@@ -24,7 +24,7 @@ def create_transaction(customer_id, employee_id):
 
 def add_appointment_to_transaction():
     print("Adding appointment to transaction...")
-    create_appointment()
+    add_product()
 
 
 def remove_appointment_from_transaction(transaction_id, service_id):
