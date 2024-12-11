@@ -1,6 +1,7 @@
 from product import get_product_query_type
 from transaction import handle_transaction
 from user import *
+from appointment import get_appointment_query_type
 
 
 ######################      Main CLI loop to handle user input        ######################
@@ -11,26 +12,29 @@ def handle_verified_user(run):
     while run and user is not None:
         print("\nPlease enter a number to select from the following options:")
         print("1 - Start a new transaction.")
-        print("2 - Change password")
-        print("3 - About our services")
-        print("4 - Update my account info")
-        print("5 - Delete my account")
-        print("6 - Exit? ")
+        print("2 - Modify an existing transaction.")
+        print("3 - Change password")
+        print("4 - About our services")
+        print("5 - Update my account info")
+        print("6 - Delete my account")
+        print("7 - Exit? ")
         selected_option = selected_option = input()
         match selected_option:
             case "1":
                 handle_transaction()
             case "2":
-                forgot_password(user.email)
+                get_appointment_query_type()
             case "3":
-                get_product_query_type()
+                forgot_password(user.email)
             case "4":
-                update_user_account(user)
+                get_product_query_type()
             case "5":
+                update_user_account(user)
+            case "6":
                 delete_a_user(user)
                 user = None
                 return
-            case "6":
+            case "7":
                 exit(0)
             case _:
                 print("Please select a valid option!")
